@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block content %}
+
+
+    <section class="career-section color-blue">
+        <div class="my-container">
+            <div class="career-title">
+                <h1>{% trans "Əlaqə" %}</h1>
+                <p>{% trans "Müzakirə etmək üçün bir layihə var, əlaqə saxlayın." %}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-area">
+        <div class="my-container">
+            <div class="contact-content">
+                <div class="map">
+
+                    <div class="map-title">{% trans "Xəritədə" %}</div>
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas"
+                                src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                href="https://goo.gl/maps/QKkf67Do9iPMBvR4A"></a><br>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                }
+                            </style><a href="https://www.embedgooglemap.net"></a>
+                            <style>
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    height: 500px;
+                                    width: 100%;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="address-area">
+                    {% for address in address_list %}
+                    <div class="address-content">
+                        <h5>{% trans "Bizimlə əlaqə" %}</h5>
+                        <p>{{address.address}}</p>
+                        <div class="social-icons">
+                            <a href=""><img src="{% static 'svg/instagram2.svg' %}" target="_blank" alt=""></a>
+                            <a href=""><img src="{% static 'svg/fb.svg' %}" target="_blank" alt=""></a>
+                            <a href=""><img src="{% static 'svg/linkedin2.svg' %}" target="_blank" alt=""></a>
+                        </div>
+                        <p class="number">{{address.phone_number}}</p>
+                        <p class="email">{{address.email}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="add-cv color-gray">
+        <div class="my-container">
+            <div class="contact-form">
+                <div class="contact-form-title">
+                    <h1>{% trans "Müraciət edin" %}</h1>
+                    <p>{% trans "Əgər işləmək istəyirsinizsə, aşağıdakı formanı doldura bilərsiniz və biz sizinlə əlaqə saxlayacağıq." %}</p>
+                </div>
+
+                <div class="form-area">
+                    <form action="" method="post">
+                        {% csrf_token %}
+
+
+                        <label for="">
+                            <div class="input-title">{% trans "Ad, Soyad, Ata adı *" %}</div>
+                            {{form.name}}
+                        </label>
+
+            
+                        <label for="">
+                            <div class="input-title">{% trans "Telefon nömrə *" %}</div>
+                            {{form.phone}}
+                        </label>
+
+                        <label for="">
+                            <div class="input-title">{% trans "Email *" %}</div>
+                            {{form.email}}
+                        </label>
+
+
+                        <label for="">
+                            <div class="input-title">{% trans "Mesajınız *" %}</div>
+                            {{form.message}}
+                        </label>
+                       
+
+
+                     
+
+                        <div class="btn-area">
+                            <button type="submit">{% trans "GÖNDƏR" %}</button>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+
+
+
+
+

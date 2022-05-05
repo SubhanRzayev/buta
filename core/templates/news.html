@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block content %}
+
+    <section class="career-section color-blue">
+        <div class="my-container">
+            <div class="career-title">
+                <h1>{% trans "Xəbərlər" %}</h1>
+                <p>{% trans "İdeyaları həyata keçirən hər kəsin deməyə sözü var. Şirkətimizdə hər zaman sizinlə bölüşmək istədiyimiz bir şey olur." %}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="news">
+        <div class="my-container">
+            <div class="news-cards">
+                {% for innovations in innovations_list %}
+                <div class="project-box news-card">
+                    <div class="box-img">
+
+                        <img src="{{innovations.news_image.url}}" alt="">
+                        <div class="dark-bg"></div>
+                    </div>
+
+                    <a href="{{innovations.get_absolute_url}}">
+                        {{innovations.title}}
+                        <img src="{% static 'svg/Arrow_Back.svg' %}" alt=""></a>
+
+                    <div class="overlay">
+                        <div class="head">
+                            <p>{{innovations.created_at|date:"d F Y"}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+               
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="contact-us">
+
+        <div class="my-container">
+            <div class="contact-us-content">
+                <h1>{% trans "Bizimlə əlaqə" %}</h1>
+                <div class="p">
+                    <p>{% trans "Təklif etdiyimiz xidmətlər haqqında daha çox öyrənmək istəyirsiniz?" %}</p>
+                </div>
+
+                <a href="{% url 'core:contact' %}">
+                    <div class="contact-btn">
+                        {% trans "Əlaqə saxlayın" %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+   
+{% endblock %}

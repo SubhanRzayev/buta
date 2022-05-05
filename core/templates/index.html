@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% load custom_tags %}
+
+
+{% block content %}
+
+    
+
+    <main>
+
+        <div class="background-img">
+            <img src="{% static 'img/bg.png' %}" alt="">
+        </div>
+
+        <div class="background-black"></div>
+        <div class="my-container">
+            <div class="main-title">
+                <div class="title">
+                    {% trans "Ən yaxşı bildiyimiz işi, Ən gözəl şəkildə edirik." %}
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="company-logos">
+        <div class="my-container">
+            <div class="company-logos-content">
+                <h1>{% trans "Bizə etibar etdilər." %}</h1>
+                <p>{% trans "Onlar bizi seçərək həm öz layihələrinin mükəmməl formada tətbiqini təmin etdilər həm də istehlakçılara uzun vədədə fayda verdilər." %}</p>
+
+                <div class="companies">
+                    {% for partner in partners_list %}
+                    <img src="{{partner.image.url}}" alt="">
+                    {% endfor %}
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services-offers">
+        <div class="my-container">
+            <div class="quality">
+                <div class="img-area">
+                    <img src="{% static 'img/services.png' %}" alt="">
+                </div>
+                <div class="quality-content">
+                    <h1>{% trans "Xidmətlərimizin keyfiyyəti nəzarət altındadır." %}</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis lorem non dignissim commodo.
+                        Cras efficitur feugiat quam, elementum pretium lectus blandit in. Quisque sit amet justo
+                        imperdiet, accumsan quam vel, gravida ex. Sed ultricies ex sed pellentesque efficitur. Integer
+                        placerat quis magna eu hendrerit.</p>
+
+                    <div class="more">
+                        <a href="{% url 'core:corporate' %}#certificates"> <span>{% trans "Sertifikatlarımız" %}</span> {% trans "haqqında daha ətraflı" %}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quality">
+                {% header_category as context %}
+
+                <div class="quality-content">
+                    <h1>{% trans "Buta Construction nələr təklif edir?" %}</h1>
+                    {% for s in context.servicecategory %}
+
+                    <img src="{{s.image.url}}" alt="">
+                    <br>
+
+                    <h4>{{s.title}}</h4>
+                    <p>{{s.description}}</p>
+
+                    
+                    {% endfor %}
+
+                </div>
+
+                <div class="img-area">
+                    <img src="{% static 'img/offers.png' %}" alt="">
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <section class="different">
+        <div class="my-container">
+            <div class="different-title">
+                <h1>{% trans "Fərqli yanaşırıq" %}</h1>
+                <p>2008 ci ildən, Buta İnşaat inşa etdiyi layihələrdə özünəməxsuzluğu olan həllər hazırlayır.</p>
+            </div>
+
+            <div class="different-slide">
+                <div class="owl-carousel second-slide owl-theme">
+                    
+                    {% for service in service_list %}
+                    
+                    <div class="item" class="width100">
+                        <img src="{{service.service_icon_image.url}}" alt="">
+                        <h3>{{service.name}}</h3>
+
+                        <p>{{service.title}}</p>
+
+                        <a href="{{service.get_absolute_url}}"> {% trans "Ətraflı" %} <img src="{% static 'svg/right-arrow.svg' %}" alt=""></a>
+                    </div>
+
+                    {% endfor %}
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="project-we-built">
+        <div class="my-container">
+            <div class="project-we-built-title">
+                <h1>{% trans "Hansı layihələrin öhdəsindən gəlmişik." %}</h1>
+                <p>{% trans "Portfoliomuz əməkdaşlarımızın səylərinin nəticəsidir . Bizi qürurlandıran və daha yaxşı işlər görməyə motivasiya edən budur. Burada əsas layihələrimiz haqqında məlumat tapa bilərsiniz." %}</p>
+
+            </div>
+
+            <div class="project-we-built-box">
+                {% for project in projects_list %}
+                <div class="project-box">
+                    <div class="box-img">
+                        <div class="box-title">{{project.title}}</div>
+                        <img src="{{project.project_image.url}}" alt="">
+                        <div class="dark-bg"></div>
+                    </div>
+
+                    <a href="{{project.get_absolute_url}}"><img src="{% static 'svg/circle-arrow.svg' %}" alt=""> {% trans "Layihə haqqında ətraflı" %}</a>
+                </div>
+                {% endfor %}
+
+            
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact-us">
+
+        <div class="my-container">
+            <div class="contact-us-content">
+                <h1>{% trans "Bizimlə əlaqə" %}</h1>
+                <div class="p">
+                    <p>{% trans "Təklif etdiyimiz xidmətlər haqqında daha çox öyrənmək istəyirsiniz?" %}</p>
+                </div>
+
+                <a href="{% url 'core:contact' %}">
+                    <div class="contact-btn">
+                        {% trans "Əlaqə saxlayın" %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock content %}
+
+    

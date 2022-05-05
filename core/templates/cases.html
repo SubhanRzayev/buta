@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block content %}
+
+    <section class="corporate-line">
+        <div class="my-container">
+            <div class="corporate-filter another-padding">
+                <div class="corporate-title">
+                    {% trans "Layihələr" %}
+                </div>
+
+                <div class="filters">
+                    <div class="select-filter">
+                        <form action=""  method="GET" accept-charset="utf-8" style="display:flex; align-items:center; justify-content:center;">
+                        <div class="custom-select">
+                            <select name="select" id="airline-selected lng" class="lng" >
+                                <option value="">{% trans "Layihə növü" %}</option>
+                                <option value="1">{% trans "Bütün" %}</option>
+                                {% for k in kategory %}
+                                <option value="{{k.name}}">{{k.name}}</option>
+
+                                {% endfor %}
+                                
+                            </select>
+                            
+                            
+
+                        </div>
+                        <div class="search-button">
+                            <button style="margin:0px 20px; background:none;border:none;" type="submit">{% trans "Axtarış" %}</button>
+                        </div>
+                    </form>
+                    </div>
+                    <a href="{% url 'core:cases' %}">{% trans "Bütün" %}</a>
+                    
+                    {% for x in categories %}
+
+                    <a href="{{x.get_absolute_url}}">{{x.name}}</a>
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="career-section color-blue">
+        <div class="my-container">
+            <div class="career-title">
+                <h1>{% trans "Nələr edirik" %}</h1>
+                <p>{% trans "“Buta Construction” 700-dən çox layihənin tikintisində iştirak edib. Layihələrə bir çox körpülər, sənaye sularının təmizlənməsi və daha çox şey daxildir." %}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-we-built">
+        <div class="my-container">
+            <div class="projects-title-2">{% trans "Bütün Layihələr" %}</div>
+
+            <div class="project-we-built-box all-cases-box">
+
+                
+
+                {% for p in project_list %}
+
+                <a href="{{p.get_absolute_url}}">
+                    <div class="project-box-2">
+                        <div class="box-img">
+                            <div class="box-title">{{p.title}}</div>
+                            <img src="{{p.project_image.url}}" alt="">
+                            <div class="dark-bg"></div>
+                        </div>
+                    </div>
+                </a>
+
+                {% endfor %}
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="contact-us">
+
+        <div class="my-container">
+            <div class="contact-us-content">
+                <h1>{% trans "Bizimlə əlaqə" %}</h1>
+                <div class="p">
+                    <p>{% trans "Təklif etdiyimiz xidmətlər haqqında daha çox öyrənmək istəyirsiniz?" %}</p>
+                </div>
+
+                <a href="{% url 'core:contact' %}">
+                    <div class="contact-btn">
+                        {% trans "Əlaqə saxlayın" %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock content %}

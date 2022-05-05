@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block content %}
+
+
+
+    <section class="career-section color-blue">
+        <div class="my-container">
+            <div class="career-title">
+
+                <p>{% trans "Layihə haqqında" %}</p>
+                <h1>{{project.title}}</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="case--details">
+        <div class="my-container">
+            <div class="about-us">
+                <div class="case--title">{{project.description}}</div>
+                <div class="about-content case-boxes">
+
+                    <div class="case-detail-box">
+                        <h6>{% trans "Vəziyyəti" %}</h6>
+                        <p>{{project.condition}}</p>
+                    </div>
+
+                    <div class="case-detail-box">
+                        <h6>{% trans "Tipi" %}</h6>
+                        <p>{{project.type}}</p>
+                    </div>
+
+                    <div class="case-detail-box">
+                        <h6>{% trans "Sahə" %}</h6>
+                        <p>{{project.area}}</p>
+                    </div>
+
+                    <div class="case-detail-box">
+                        <h6>{% trans "Müddət" %}</h6>
+                        <p>{{project.term}}</p>
+                    </div>
+
+                    <div class="case-detail-box">
+                        <h6>{% trans "Yer" %}</h6>
+                        <p>{{project.place}}</p>
+                    </div>
+
+                    <div class="case-detail-box">
+                        <h6>{% trans "Müştəri" %}</h6>
+                        <p>{{project.customer}}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-slide">
+        <div class="my-container">
+
+            <div class="slide-box">
+                <div class="slide-title">
+                    <p>{% trans "Qalereya" %}</p>
+                </div>
+
+                <div class="owl-carousel product-slide owl-theme">
+                    {% for i in project.projects_images.all %}
+                    <div class="item">
+                        <img src="{{i.image.url}}">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="project-we-built color-gray">
+        <div class="my-container">
+            <div class="projects-title-2  text-left">{% trans "Son layihələr" %}</div>
+
+            <div class="project-we-built-box all-cases-box">
+                {% for p in projects_list %}
+                <a href="{{p.get_absolute_url}}">
+                    <div class="project-box-2">
+                        <div class="box-img">
+                            <div class="box-title">{{p.title}}</div>
+                            <img src="{{p.project_image.url}}" alt="">
+                            <div class="dark-bg"></div>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+
+                
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="contact-us">
+
+        <div class="my-container">
+            <div class="contact-us-content">
+                <h1>{% trans "Bizimlə əlaqə" %}</h1>
+                <div class="p">
+                    <p>{% trans "Təklif etdiyimiz xidmətlər haqqında daha çox öyrənmək istəyirsiniz?" %}</p>
+                </div>
+
+                <a href="{% url 'core:contact' %}">
+                    <div class="contact-btn">
+                        {% trans "Əlaqə saxlayın" %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+   
+{% endblock content %}

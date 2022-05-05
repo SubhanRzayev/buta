@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-04 22:31+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: buta/settings.py:239
+msgid "az"
+msgstr ""
+
+#: buta/settings.py:240
+msgid "en"
+msgstr ""
+
+#: buta/settings.py:241
+msgid "ru"
+msgstr ""
+
+#: core/templates/career.html:8 core/templates/include/header.html:54
+msgid "Karyera"
+msgstr ""
+
+#: core/templates/career.html:9
+msgid ""
+"Biz komandamıza yüksək ixtisaslı, multikultural mühitdə bütün "
+"potensiallarını inkişaf etdirməyə və həm peşəkar, həm də insan kimi böyüməyə "
+"imkan verən fərdiləşdirilmiş karyera planları təklif edirik."
+msgstr ""
+
+#: core/templates/career.html:18
+msgid "Sizinlə tanış olmaq istəyirik!"
+msgstr ""
+
+#: core/templates/career.html:20
+msgid ""
+"Biz həmişə komandamıza uyğunlaşa bilən yeni istedadlarla tanış olmaq "
+"istəyirik. Yüksək ixtisaslı, multikultural mühitdə biz işçilərimizə bütün "
+"potensiallarını inkişaf etdirməyə və peşəkar, kimi inkişaf etməyə imkan "
+"verən fərdiləşdirilmiş karyera planları təklif edirik. Lazım gələrsə, "
+"istəyən işçilərimizə lazım olan müxtəlif sertifikatları almağa kömək edirik. "
+"Biz həmçinin konkret sosial inteqrasiya planlarını həyata keçirərək, onlara "
+"hər cür şərait yaratmağa çalışırıq."
+msgstr ""
+
+#: core/templates/career.html:28
+msgid "Mövcud vakansiyalar"
+msgstr ""
+
+#: core/templates/career.html:44 core/templates/contact.html:67
+msgid "Müraciət edin"
+msgstr ""
+
+#: core/templates/career.html:45 core/templates/contact.html:68
+msgid ""
+"Əgər işləmək istəyirsinizsə, aşağıdakı formanı doldura bilərsiniz və biz "
+"sizinlə əlaqə saxlayacağıq."
+msgstr ""
+
+#: core/templates/career.html:52 core/templates/contact.html:77
+msgid "Ad, Soyad, Ata adı *"
+msgstr ""
+
+#: core/templates/career.html:58
+msgid "Mövcud vakansiyalar *"
+msgstr ""
+
+#: core/templates/career.html:70 core/templates/contact.html:88
+msgid "Email *"
+msgstr ""
+
+#: core/templates/career.html:75
+msgid "CV fayl (pdf, doc, docx)*"
+msgstr ""
+
+#: core/templates/career.html:80 core/templates/contact.html:103
+msgid "GÖNDƏR"
+msgstr ""
+
+#: core/templates/case-detail.html:12
+msgid "Layihə haqqında"
+msgstr ""
+
+#: core/templates/case-detail.html:25
+msgid "Vəziyyəti"
+msgstr ""
+
+#: core/templates/case-detail.html:30
+msgid "Tipi"
+msgstr ""
+
+#: core/templates/case-detail.html:35
+msgid "Sahə"
+msgstr ""
+
+#: core/templates/case-detail.html:40
+msgid "Müddət"
+msgstr ""
+
+#: core/templates/case-detail.html:45
+msgid "Yer"
+msgstr ""
+
+#: core/templates/case-detail.html:50
+msgid "Müştəri"
+msgstr ""
+
+#: core/templates/case-detail.html:64
+msgid "Qalereya"
+msgstr ""
+
+#: core/templates/case-detail.html:81
+msgid "Son layihələr"
+msgstr ""
+
+#: core/templates/case-detail.html:109 core/templates/cases.html:91
+#: core/templates/contact.html:47 core/templates/corporate.html:149
+#: core/templates/include/footer.html:57 core/templates/index.html:153
+#: core/templates/news-details.html:42 core/templates/news.html:49
+#: core/templates/service-details.html:80
+msgid "Bizimlə əlaqə"
+msgstr ""
+
+#: core/templates/case-detail.html:111 core/templates/cases.html:93
+#: core/templates/corporate.html:151 core/templates/index.html:155
+#: core/templates/news-details.html:44 core/templates/news.html:51
+#: core/templates/service-details.html:82
+msgid "Təklif etdiyimiz xidmətlər haqqında daha çox öyrənmək istəyirsiniz?"
+msgstr ""
+
+#: core/templates/case-detail.html:116 core/templates/cases.html:98
+#: core/templates/corporate.html:156 core/templates/include/footer.html:54
+#: core/templates/index.html:160 core/templates/news-details.html:50
+#: core/templates/news.html:56 core/templates/service-details.html:87
+msgid "Əlaqə saxlayın"
+msgstr ""
+
+#: core/templates/cases.html:9 core/templates/include/header.html:19
+msgid "Layihələr"
+msgstr ""
+
+#: core/templates/cases.html:17
+msgid "Layihə növü"
+msgstr ""
+
+#: core/templates/cases.html:18 core/templates/cases.html:34
+msgid "Bütün"
+msgstr ""
+
+#: core/templates/cases.html:30
+msgid "Axtarış"
+msgstr ""
+
+#: core/templates/cases.html:51
+msgid "Nələr edirik"
+msgstr ""
+
+#: core/templates/cases.html:52
+msgid ""
+"“Buta Construction” 700-dən çox layihənin tikintisində iştirak edib. "
+"Layihələrə bir çox körpülər, sənaye sularının təmizlənməsi və daha çox şey "
+"daxildir."
+msgstr ""
+
+#: core/templates/cases.html:59
+msgid "Bütün Layihələr"
+msgstr ""
+
+#: core/templates/contact.html:10 core/templates/include/header.html:55
+msgid "Əlaqə"
+msgstr ""
+
+#: core/templates/contact.html:11
+msgid "Müzakirə etmək üçün bir layihə var, əlaqə saxlayın."
+msgstr ""
+
+#: core/templates/contact.html:21
+msgid "Xəritədə"
+msgstr ""
+
+#: core/templates/contact.html:83
+msgid "Telefon nömrə *"
+msgstr ""
+
+#: core/templates/contact.html:94
+msgid "Mesajınız *"
+msgstr ""
+
+#: core/templates/corporate.html:9 core/templates/include/footer.html:42
+#: core/templates/include/header.html:18
+msgid "Korporativ"
+msgstr ""
+
+#: core/templates/corporate.html:13 core/templates/corporate.html:34
+msgid "Haqqımızda"
+msgstr ""
+
+#: core/templates/corporate.html:14 core/templates/corporate.html:54
+msgid "Dəyərlərimiz"
+msgstr ""
+
+#: core/templates/corporate.html:15
+msgid "Tərəfdaşlarımız"
+msgstr ""
+
+#: core/templates/corporate.html:16 core/templates/corporate.html:114
+#: core/templates/include/footer.html:49
+msgid "Sertifikatlar"
+msgstr ""
+
+#: core/templates/corporate.html:25
+msgid "Niyə Buta İnşaat?"
+msgstr ""
+
+#: core/templates/corporate.html:26
+msgid ""
+"Biz yalnız insanların deyil, həm də bir ölkənin həyatını dəyişdirə biləcək "
+"böyük ideyaları dəstəkləyən və şərtlərdən asılı olmayaraq bütün layihələri "
+"tamamlayan bir şirkətik."
+msgstr ""
+
+#: core/templates/corporate.html:40
+msgid "Missiyamız"
+msgstr ""
+
+#: core/templates/corporate.html:55
+msgid ""
+"Bunlar sadəcə sözlər deyil - etdiyimiz hər işdə bu dəyərlər rəhbər tutulur."
+msgstr ""
+
+#: core/templates/corporate.html:98 core/templates/index.html:29
+msgid "Bizə etibar etdilər."
+msgstr ""
+
+#: core/templates/corporate.html:99 core/templates/index.html:30
+msgid ""
+"Onlar bizi seçərək həm öz layihələrinin mükəmməl formada tətbiqini təmin "
+"etdilər həm də istehlakçılara uzun vədədə fayda verdilər."
+msgstr ""
+
+#: core/templates/corporate.html:115
+msgid ""
+"İşimizin keyfiyyəti öz sözünü desə də, əgər əvvəllər bizimlə "
+"işləməmisinizsə, başqalarının bizim üçün düşündüyünü öyrənmək maraqlı ola "
+"bilər."
+msgstr ""
+
+#: core/templates/corporate.html:127
+msgid "Baxın"
+msgstr ""
+
+#: core/templates/include/footer.html:13 core/templates/include/header.html:21
+#: core/templates/include/header.html:24 core/templates/include/header.html:29
+msgid "Xidmətlər"
+msgstr ""
+
+#: core/templates/include/footer.html:28
+msgid "Ümumi Xidmətlər"
+msgstr ""
+
+#: core/templates/include/footer.html:45
+msgid "Şirkət tarixçəsi"
+msgstr ""
+
+#: core/templates/include/footer.html:46
+msgid "Rəhbərlik"
+msgstr ""
+
+#: core/templates/include/footer.html:47
+msgid "Vizyon və Missiyamız"
+msgstr ""
+
+#: core/templates/include/footer.html:48
+msgid "Keyfiyyət"
+msgstr ""
+
+#: core/templates/include/footer.html:67
+msgid "Copyright © 2022 Buta Construction. Bütün haqqları qorunur."
+msgstr ""
+
+#: core/templates/include/header.html:53
+msgid "Yeniliklər"
+msgstr ""
+
+#: core/templates/index.html:20
+msgid "Ən yaxşı bildiyimiz işi, Ən gözəl şəkildə edirik."
+msgstr ""
+
+#: core/templates/index.html:50
+msgid "Xidmətlərimizin keyfiyyəti nəzarət altındadır."
+msgstr ""
+
+#: core/templates/index.html:57
+msgid "Sertifikatlarımız"
+msgstr ""
+
+#: core/templates/index.html:57
+msgid "haqqında daha ətraflı"
+msgstr ""
+
+#: core/templates/index.html:66
+msgid "Buta Construction nələr təklif edir?"
+msgstr ""
+
+#: core/templates/index.html:93
+msgid "Fərqli yanaşırıq"
+msgstr ""
+
+#: core/templates/index.html:108
+msgid "Ətraflı"
+msgstr ""
+
+#: core/templates/index.html:125
+msgid "Hansı layihələrin öhdəsindən gəlmişik."
+msgstr ""
+
+#: core/templates/index.html:126
+msgid ""
+"Portfoliomuz əməkdaşlarımızın səylərinin nəticəsidir . Bizi qürurlandıran və "
+"daha yaxşı işlər görməyə motivasiya edən budur. Burada əsas layihələrimiz "
+"haqqında məlumat tapa bilərsiniz."
+msgstr ""
+
+#: core/templates/index.html:139 core/templates/service-details.html:68
+msgid "Layihə haqqında ətraflı"
+msgstr ""
+
+#: core/templates/news-details.html:28
+msgid "Yeniliklərə keçid"
+msgstr ""
+
+#: core/templates/news.html:8
+msgid "Xəbərlər"
+msgstr ""
+
+#: core/templates/news.html:9
+msgid ""
+"İdeyaları həyata keçirən hər kəsin deməyə sözü var. Şirkətimizdə hər zaman "
+"sizinlə bölüşmək istədiyimiz bir şey olur."
+msgstr ""

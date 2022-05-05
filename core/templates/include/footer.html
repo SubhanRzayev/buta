@@ -1,0 +1,80 @@
+{% load static i18n %}
+{% load custom_tags %}
+<footer>
+    <div class="my-container">
+        <div class="footer-content">
+            <div class="footer-boxes">
+                <div class="content-boxes logo-box">
+                    <a href="{% url 'core:index' %}"><img src="{% static 'svg/logo.svg' %}" alt=""></a> 
+                </div>
+
+                {% header_category as context %}
+                <div class="content-boxes">
+                    <h2>{% trans "Xidmətlər" %}</h2>
+
+                    <div class="ul-li">
+                        {% for s in context.cat %}
+                        {% for service in s.service.all %}
+                        <li> <a href="{{service.get_absolute_url}}">{{service.title}}</a></li>
+                        {% endfor %}
+                        {% endfor %}
+
+                        
+                    </div>
+                </div>
+                {% header_category as context %}
+
+                <div class="content-boxes">
+                    <h2>{% trans "Ümumi Xidmətlər" %}</h2>
+
+                    <div class="ul-li">
+                        
+                        {% for s in context.cat %}
+                        <li> 
+                            <a>{{s.title}}</a> 
+                        </li>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+
+                <div class="content-boxes">
+                    <h2>{% trans "Korporativ" %}</h2>
+
+                    <div class="ul-li">
+                        <li> <a href="{% url 'core:corporate' %}#about">{% trans "Şirkət tarixçəsi" %}</a> </li>
+                        <li> <a href="{% url 'core:corporate' %}">{% trans "Rəhbərlik" %}</a> </li>
+                        <li> <a href="{% url 'core:corporate' %}#value">{% trans "Vizyon və Missiyamız" %}</a> </li>
+                        <li> <a href="{% url 'core:corporate' %}#company">{% trans "Keyfiyyət" %}</a> </li>
+                        <li> <a href="{% url 'core:corporate' %}#certificates">{% trans "Sertifikatlar" %}</a> </li>
+                    </div>
+                </div>
+
+                <div class="content-boxes">
+                    <h2>{% trans "Əlaqə saxlayın" %}</h2>
+
+                    <div class="ul-li">
+                        <li>{% trans "Bizimlə əlaqə" %}</li>
+                        <div class="socials">
+                            <a href=""><img src="{% static 'svg/linkedin.svg' %}" target="_blank" alt=""></a>
+                            <a href=""><img src="{% static 'svg/facebook.svg' %}" target="_blank" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="copy">{% trans "Copyright © 2022 Buta Construction. Bütün haqqları qorunur." %}</div>
+                <div class="poweredby">
+                    <a href=""><img src="{% static 'svg/powered-by.svg' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper2">
+        <span class="scroll-to-top scroll-up">
+          <img src="{% static 'svg/scroll-up.svg' %}" alt="">
+        </span>
+    </div>
+</footer>

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block content %}
+
+    <section class="career-section color-blue">
+        <div class="my-container">
+            <div class="career-title">
+                <h1>{% trans "Karyera" %}</h1>
+                <p>{% trans "Biz komandamıza yüksək ixtisaslı, multikultural mühitdə bütün potensiallarını inkişaf etdirməyə və həm peşəkar, həm də insan kimi böyüməyə imkan verən fərdiləşdirilmiş karyera planları təklif edirik." %}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="my-container">
+            <div class="about-us">
+                <div class="about-title">{% trans "Sizinlə tanış olmaq istəyirik!" %}</div>
+                <div class="about-content">
+                    <p>{% trans "Biz həmişə komandamıza uyğunlaşa bilən yeni istedadlarla tanış olmaq istəyirik. Yüksək ixtisaslı, multikultural mühitdə biz işçilərimizə bütün potensiallarını inkişaf etdirməyə və peşəkar, kimi inkişaf etməyə imkan verən fərdiləşdirilmiş karyera planları təklif edirik. Lazım gələrsə, istəyən işçilərimizə lazım olan müxtəlif sertifikatları almağa kömək edirik. Biz həmçinin konkret sosial inteqrasiya planlarını həyata keçirərək, onlara hər cür şərait yaratmağa çalışırıq." %}
+                    </p>
+
+
+                </div>
+            </div>
+
+            <div class="about-us">
+                <div class="about-title">{% trans "Mövcud vakansiyalar" %}</div>
+                <div class="about-content">
+                    {% for c in career_list %}
+                    <p>{{c.title}}</p>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="add-cv color-gray">
+        <div class="my-container">
+            <div class="contact-form">
+                <div class="contact-form-title">
+                    <h1>{% trans "Müraciət edin" %}</h1>
+                    <p>{% trans "Əgər işləmək istəyirsinizsə, aşağıdakı formanı doldura bilərsiniz və biz sizinlə əlaqə saxlayacağıq." %}</p>
+                </div>
+
+                <div class="form-area">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <label class="lbl" for="">
+                            <div class="input-title">{% trans "Ad, Soyad, Ata adı *" %}</div>
+                            {{form.full_name}}
+                        </label>
+
+                        <label class="lbl" for="">
+                            <div class="select-area">
+                                <div class="select-title">{% trans "Mövcud vakansiyalar *" %}</div>
+                                <div class="custom-select">
+                                
+                                {{form.career}}
+                                {{form.label}}
+                                        
+                                </div>
+                            </div>
+                        </label>
+
+
+                        <label class="lbl" for="">
+                            <div class="input-title">{% trans "Email *" %}</div>
+                            {{form.email}}
+                        </label>
+
+                        <label class="lbl" for="">
+                            <div class="input-title">{% trans "CV fayl (pdf, doc, docx)*" %}</div>
+                            {{form.cv}}
+                        </label>
+
+                        <div class="btn-area">
+                            <button>{% trans "GÖNDƏR" %}</button>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock content %}

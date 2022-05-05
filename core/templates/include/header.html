@@ -1,0 +1,93 @@
+{% load static i18n  %}
+{% load custom_tags %}
+<nav>
+    <div class="wrapper">
+        <div class="my-container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="{% url 'core:index' %}">
+                        <img src="{% static 'svg/logo.svg' %}" alt="">
+                    </a>
+                </div>
+
+
+                <input type="radio" name="slider" id="menu-btn">
+                <input type="radio" name="slider" id="close-btn">
+                <ul class="nav-links">
+                    <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                    <li class="list-p"><a href="{% url 'core:corporate' %}">{% trans "Korporativ" %}</a></li>
+                    <li class="list-p"><a href="{% url 'core:cases' %}">{% trans "Layihələr" %}</a></li>
+                    <li class="list-p">
+                        <a href="#" class="desktop-item">{% trans "Xidmətlər" %}<span><img
+                                    src="{% static 'svg/arrow.svg' %}" alt=""></span></a>
+                        <input type="checkbox" id="showMega">
+                        <label for="showMega" class="mobile-item">{% trans "Xidmətlər" %}</label>
+                        <div class="mega-box">
+                            <div class="content">
+                                <div class="my-container">
+                                    <div class="navbar-title">
+                                        {% trans "Xidmətlər" %}
+
+                                        <hr>
+                                    {% header_category as context %}
+                                        
+                                        <div class="navbar-content">
+                                            {% for s in context.cat %}
+                                            <div class="content-section">
+                                                
+                                                <h2>{{s.title}}</h2>
+                                                <ul>
+                                                    {% for service in s.service.all %}
+                                                    <li><a href="{{service.get_absolute_url}}">{{service.title}}</a></li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                            {% endfor %}
+
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li class="list-p"><a href="{% url 'core:innovations' %}">{% trans "Yeniliklər" %}</a></li>
+                    <li class="list-p"><a href="{% url 'core:career' %}">{% trans "Karyera" %}</a></li>
+                    <li class="list-p"><a href="{% url 'core:contact' %}">{% trans "Əlaqə" %}</a></li>
+                </ul>
+                <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+
+                <div class="lang">
+
+                    <form action="{% url 'set_language' %}" method="post">  {#2#}
+
+                        {% csrf_token %}  {#3#}
+                        <select name="language" class="lng" id="lang">  {#4#}
+                            {% get_current_language as LANGUAGE_CODE %}  {#5#}
+                            {% get_available_languages as LANGUAGES %}  {#6#}
+                            {% get_language_info_list for LANGUAGES as languages %}  {#7#}
+                            {% for language in request|get_language_info_list_ex %}
+                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                    <span class="flag">{{ language.flag }}</span>  {#8#}
+                                     {{ language.code }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+
+
+
+                        {% comment %} <select name="language" id="lang">
+                            <option value="img">a<img src="{% static 'svg/az.svg' %}" alt=""> </option>
+                            <option value="img">u<img src="{% static 'svg/usa.svg' %}" alt=""> </option>
+                            <option value="img">r<img src="{% static 'svg/russian.svg' %}" alt=""> </option>
+                        </select> {% endcomment %}
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>

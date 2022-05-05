@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block content %}
+
+
+
+    <section class="services-offers color-blue">
+        <div class="my-container">
+            <div class="quality">
+                <div class="quality-content system">
+
+                    <p>{{service.name}}</p>
+                    <h1>{{service.title}}</h1>
+
+                </div>
+                <div class="img-area second-img-area">
+                    <img src="{{service.service_head_image.url}}" alt="">
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+
+    <section class="services-offers">
+        <div class="my-container">
+            <div class="quality">
+                <div class="img-area">
+                    <img src="{{service.service_content_image.url}}" alt="">
+                </div>
+                <div class="quality-content">
+                   
+                    <p>{{service.service_content|safe}}</p>
+
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+
+
+    <section class="project-we-built color-gray">
+        <div class="my-container">
+            <div class="project-we-built-title">
+                <h1>Layihələr</h1>
+
+
+            </div>
+
+            <div class="project-we-built-box">
+                {% for project in projects_list %}
+                <div class="project-box">
+                    <div class="box-img">
+                        <div class="box-title">{{project.title}}</div>
+                        <img src="{{project.project_image.url}}" alt="">
+                        <div class="dark-bg"></div>
+                    </div>
+
+                    <a href="{{project.get_absolute_url}}"><img src="{% static 'svg/circle-arrow.svg' %}" alt=""> {% trans "Layihə haqqında ətraflı" %}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact-us">
+
+        <div class="my-container">
+            <div class="contact-us-content">
+                <h1>{% trans "Bizimlə əlaqə" %}</h1>
+                <div class="p">
+                    <p>{% trans "Təklif etdiyimiz xidmətlər haqqında daha çox öyrənmək istəyirsiniz?" %}</p>
+                </div>
+
+                <a href="{% url 'core:contact' %}">
+                    <div class="contact-btn">
+                        {% trans "Əlaqə saxlayın" %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+
+
+    

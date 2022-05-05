@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block content %}
+
+    <section class="corporate-line">
+        <div class="my-container">
+            <div class="corporate-filter">
+                <div class="corporate-title">
+                    {% trans "Korporativ" %}
+                </div>
+
+                <div class="filters">
+                    <a href="#about">{% trans "Haqqımızda" %}</a>
+                    <a href="#value">{% trans "Dəyərlərimiz" %}</a>
+                    <a href="#company">{% trans "Tərəfdaşlarımız" %}</a>
+                    <a href="#certificates">{% trans "Sertifikatlar" %}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <div class="my-container">
+            <div class="why-us-title">
+                <h1>{% trans "Niyə Buta İnşaat?" %}</h1>
+                <p>{% trans "Biz yalnız insanların deyil, həm də bir ölkənin həyatını dəyişdirə biləcək böyük ideyaları dəstəkləyən və şərtlərdən asılı olmayaraq bütün layihələri tamamlayan bir şirkətik." %}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="my-container">
+            <div class="about-us">
+                <div class="about-title">{% trans "Haqqımızda" %}</div>
+                <div class="about-content">
+                {% for a in about_list %}
+                    <p>{{a.content_about|safe}}</p>
+
+                    <div class="mission">
+                        <h4>{% trans "Missiyamız" %}</h4>
+                        <p>{{a.mission_description}}</p>
+                    </div>
+                {% endfor %}    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="our-values" id="value">
+        <div class="my-container">
+            <div class="values">
+                <div class="values-title">
+                    <h1>{% trans "Dəyərlərimiz" %}</h1>
+                    <p>{% trans "Bunlar sadəcə sözlər deyil - etdiyimiz hər işdə bu dəyərlər rəhbər tutulur." %}</p>
+                </div>
+
+                <div class="values-content">
+                    <div class="values-box">
+                        <img src="{% static 'svg/hand.svg' %}" alt="">
+                        <p>Etdiyiniz iş üçün əlinizdən gələni edin.</p>
+                    </div>
+
+                    <div class="values-box">
+                        <img src="{% static 'svg/tech.svg' %}" alt="">
+                        <p>Texnologiyanın və elmin gücünə inanın.</p>
+                    </div>
+
+                    <div class="values-box">
+                        <img src="{% static 'svg/idea.svg' %}" alt="">
+                        <p>Ölkəniz və millətiniz üçün faydalı olun.</p>
+                    </div>
+
+                    <div class="values-box">
+                        <img src="{% static 'svg/leaf.svg' %}" alt="">
+                        <p>Ətraf mühiti və işçiləri xilas edin.</p>
+                    </div>
+
+                    <div class="values-box">
+                        <img src="{% static 'svg/hummer.svg' %}" alt="">
+                        <p>Az danış Cox iş gör.</p>
+                    </div>
+
+                    <div class="values-box">
+                        <img src="{% static 'svg/brain.svg' %}" alt="">
+                        <p>Həmişə ən yaxşısını və yenisini axtarın.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="company-logos color-w" id="company">
+        <div class="my-container">
+            <div class="company-logos-content">
+                <h1>{% trans "Bizə etibar etdilər." %}</h1>
+                <p>{% trans "Onlar bizi seçərək həm öz layihələrinin mükəmməl formada tətbiqini təmin etdilər həm də istehlakçılara uzun vədədə fayda verdilər." %}</p>
+
+                <div class="companies">
+                    {% for partner in partners_list %}
+                    <img src="{{partner.image.url}}" alt="">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certificate" id="certificates">
+        <div class="my-container">
+            <div class="certificates">
+                <div class="values-title">
+                    <h1>{% trans "Sertifikatlar" %}</h1>
+                    <p>{% trans "İşimizin keyfiyyəti öz sözünü desə də, əgər əvvəllər bizimlə işləməmisinizsə, başqalarının bizim üçün düşündüyünü öyrənmək maraqlı ola bilər." %} </p>
+                </div>
+
+                <div class="certificate-cards">
+                   
+                    {% for s in sertificate_list %}
+                    
+                    <div class="certificate-card">
+                    
+                        <img src="{{s.sertificate_image.url}}" alt="">
+
+                        <p>{{s.name}}</p>
+                            <a href="{{s.pdfile.url}}" target="_blank">{% trans "Baxın" %}</a>
+                    </div>
+                    
+                    {% endfor %}
+                   
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="contact-us">
+
+        <div class="my-container">
+            <div class="contact-us-content">
+                <h1>{% trans "Bizimlə əlaqə" %}</h1>
+                <div class="p">
+                    <p>{% trans "Təklif etdiyimiz xidmətlər haqqında daha çox öyrənmək istəyirsiniz?" %}</p>
+                </div>
+
+                <a href="{% url 'core:contact' %}">
+                    <div class="contact-btn">
+                        {% trans "Əlaqə saxlayın" %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

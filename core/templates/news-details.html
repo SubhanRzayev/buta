@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block content %}
+
+
+    <section class="career-section color-blue news-heading">
+        <div class="my-container">
+            <div class="news-img">
+                <img src="{% static 'img/news.png' %}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="news-details">
+        <div class="my-container">
+            <div class="news-content">
+                <h1>{{innovations.title}}</h1>
+                <p>{{innovations.created_at|date:"d F Y"}}</p>
+
+                <hr>
+
+                <p class="last-p">{{innovations.description}}</p>
+
+
+                <a href="{% url 'core:innovations' %}">
+                    <div class="news-btn">
+                        {% trans "Yeniliklərə keçid" %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="contact-us">
+
+        <div class="my-container">
+            <div class="contact-us-content">
+                <h1>{% trans "Bizimlə əlaqə" %}</h1>
+                <div class="p">
+                    <p>{% trans "Təklif etdiyimiz xidmətlər haqqında daha çox öyrənmək istəyirsiniz?" %}</p>
+                </div>
+
+                <a href="{% url 'core:contact' %}">
+
+                    <div class="contact-btn">
+                        {% trans "Əlaqə saxlayın" %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
